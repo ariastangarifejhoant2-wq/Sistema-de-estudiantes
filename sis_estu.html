@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estudiantes</title>
+    <link rel="stylesheet" href="sus_estu.css">
+    <script src="sis_estu.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="encabezado">
+        <div>
+            <h1>Sistema de Estudiantes</h1>
+            <p>Registro y seguimiento académico</p>
+        </div>
+        <span class="etiqueta">Panel académico</span>
+    </div>
+</header>
+
+<main class="contenedor">
+
+    <section class="tarjeta">
+        <h2>Registrar estudiante</h2>
+        <p class="subtitulo">
+            Ingresa los datos para añadir un nuevo registro.
+        </p>
+
+        <form id="formulario">
+            <div class="campos">
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Ej: Juan Pérez"
+                        required
+                        maxlength="80"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="grado">Grado</label>
+                    <input
+                        type="text"
+                        id="grado"
+                        placeholder="Ej: 11-A"
+                        required
+                        maxlength="20"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="nota">Nota final (0 a 5)</label>
+                    <input
+                        type="number"
+                        id="nota"
+                        placeholder="Ej: 4.5"
+                        min="0"
+                        max="5"
+                        step="0.1"
+                        required
+                    >
+                </div>
+            </div>
+
+            <button type="submit" class="boton">
+                + Agregar estudiante
+            </button>
+        </form>
+    </section>
+
+    <section class="estadisticas">
+        <article class="estadistica">
+            <span>Total de estudiantes</span>
+            <strong id="total">0</strong>
+        </article>
+
+        <article class="estadistica">
+            <span>Aprobados</span>
+            <strong id="totalAprobados" class="verde">0</strong>
+        </article>
+
+        <article class="estadistica">
+            <span>Reprobados</span>
+            <strong id="totalReprobados" class="rojo">0</strong>
+        </article>
+    </section>
+
+    <section class="tarjeta">
+        <div class="titulo-tabla">
+            <div>
+                <h2>Listado de estudiantes</h2>
+                <p class="subtitulo">
+                    Se aprueba con una nota igual o superior a 3.0.
+                </p>
+            </div>
+
+            <button id="limpiar" class="boton-secundario">
+                Limpiar registros
+            </button>
+        </div>
+
+        <div class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Grado</th>
+                        <th>Nota</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaEstudiantes">
+                    <!-- JavaScript agrega los estudiantes aquí -->
+                </tbody>
+            </table>
+        </div>
+
+        <p id="mensajeVacio" class="mensaje-vacio">
+            Todavía no hay estudiantes registrados.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Sistema de Estudiantes · Proyecto de Programación</p>
+</footer>
+
+</body>
+</html>
